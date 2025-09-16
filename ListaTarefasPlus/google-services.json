@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "200694114878",
+    "project_id": "cp4-mobile-c7b83",
+    "storage_bucket": "cp4-mobile-c7b83.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200694114878:android:915ad01fed5f5afe9d3f6f",
+        "android_client_info": {
+          "package_name": "com.cp4mobile.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200694114878-a6fbtg27uhpaclgrm85vhlbteqdej6hr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-uPPmp1YrOIhD-10HKixVHQOTq7QZXPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200694114878-a6fbtg27uhpaclgrm85vhlbteqdej6hr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
