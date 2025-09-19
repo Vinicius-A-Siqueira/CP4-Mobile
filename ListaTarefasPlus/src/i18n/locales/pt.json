@@ -1,0 +1,12 @@
+{
+  "welcome": "Bem-vindo ao Lista Tarefas Plus",
+  "newTask": "Nova Tarefa",
+  "add": "Adicionar",
+  "deleteTask": "Excluir Tarefa",
+  "settings": "Configurações",
+  "language": "Idioma",
+  "theme": "Tema",
+  "darkMode": "Modo Escuro",
+  "lightMode": "Modo Claro",
+  "logout": "Sair"
+}

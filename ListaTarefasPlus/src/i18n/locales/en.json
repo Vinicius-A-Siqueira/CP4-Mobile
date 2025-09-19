@@ -1,0 +1,12 @@
+{
+  "welcome": "Welcome to Lista Tarefas Plus",
+  "newTask": "New Task",
+  "add": "Add",
+  "deleteTask": "Delete Task",
+  "settings": "Settings",
+  "language": "Language",
+  "theme": "Theme",
+  "darkMode": "Dark Mode",
+  "lightMode": "Light Mode",
+  "logout": "Logout"
+}

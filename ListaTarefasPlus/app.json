@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Lista Tarefas Plus",
-    "slug": "lista-tarefas-plus",
+    "name": "ListaTarefasPlus",
+    "slug": "listatarefasplus",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,41 +15,19 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.fiap.listatarefasplus"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#ffffff"
       },
-      "package": "com.fiap.listatarefasplus",
-      "permissions": [
-        "NOTIFICATIONS",
-        "SCHEDULE_EXACT_ALARM"
-      ]
+      "package": "com.fiap.listatarefasplus"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     },
     "plugins": [
-      "@react-native-firebase/app",
-      "@react-native-firebase/auth",
-      "@react-native-firebase/firestore",
-      "expo-notifications",
-      [
-        "expo-build-properties",
-        {
-          "android": {
-            "compileSdkVersion": 33,
-            "targetSdkVersion": 33,
-            "buildToolsVersion": "33.0.0"
-          },
-          "ios": {
-            "deploymentTarget": "13.0"
-          }
-        }
-      ]
     ]
   }
 }
