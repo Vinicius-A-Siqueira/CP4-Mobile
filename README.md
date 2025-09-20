@@ -5,7 +5,7 @@
 - Kauan Felipe de Souza | RM: 557954  
 - Gabriel Camargo Ravanhani | RM: 557879  
 
-Link do Video:  
+Link do Video: https://youtu.be/SjsWpOLKv5M?si=lcocOqFt95n3qPYr 
 
 ---
 
