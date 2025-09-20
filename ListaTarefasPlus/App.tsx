@@ -2,6 +2,7 @@ import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Provider as PaperProvider } from "react-native-paper";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AppNavigator from "./src/navigation";
 import { ThemeProvider } from "./src/context/ThemeContext";
 import { LanguageProvider } from "./src/context/LanguageContext";
@@ -15,7 +16,11 @@ export default function App() {
       <QueryClientProvider client={queryClient}>
         <ThemeProvider>
           <LanguageProvider>
-            <PaperProvider>
+            <PaperProvider
+              settings={{
+                icon: (props) => <MaterialCommunityIcons {...props} />,
+              }}
+            >
               <AppNavigator />
             </PaperProvider>
           </LanguageProvider>

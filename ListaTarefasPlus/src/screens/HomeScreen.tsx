@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, FlatList, ActivityIndicator, StyleSheet } from "react-native";
 import { Button } from "react-native-paper";
 import * as Google from "expo-auth-session/providers/google";
+import * as AuthSession from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
 import { auth } from "../services/firebase";
 import { signInWithCredential, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
@@ -20,10 +21,8 @@ export default function HomeScreen() {
   const [loading, setLoading] = useState(true);
 
   const [request, response, promptAsync] = Google.useAuthRequest({
-    clientId: "<SEU_CLIENT_ID>",
-    iosClientId: "<SEU_IOS_CLIENT_ID>",
-    androidClientId: "<SEU_ANDROID_CLIENT_ID>",
-    webClientId: "<SEU_WEB_CLIENT_ID>",
+    webClientId: "200694114878-a6fbtg27uhpaclgrm85vhlbteqdej6hr.apps.googleusercontent.com",
+    redirectUri: AuthSession.makeRedirectUri({ useProxy: true } as any),
   });
 
   useEffect(() => {
@@ -34,14 +33,16 @@ export default function HomeScreen() {
     return unsubscribe;
   }, []);
 
+  // Realiza login com Google
   useEffect(() => {
     if (response?.type === "success" && response.authentication) {
       const { idToken, accessToken } = response.authentication;
       const credential = GoogleAuthProvider.credential(idToken, accessToken);
-      signInWithCredential(auth, credential).catch(console.error);
+      signInWithCredential(auth, credential).catch(err => console.error("Erro login Google:", err));
     }
   }, [response]);
 
+  // Busca tarefas do usuário
   useEffect(() => {
     if (!user) return;
     const unsubscribe = getTasks(user.uid, setTasks);
@@ -54,7 +55,11 @@ export default function HomeScreen() {
     return (
       <View style={styles.center}>
         <Text style={styles.title}>{t("welcome")}</Text>
-        <Button mode="contained" onPress={() => promptAsync()} disabled={!request}>
+        <Button
+          mode="contained"
+          onPress={() => promptAsync()}
+          disabled={!request}
+        >
           {t("loginGoogle")}
         </Button>
       </View>
@@ -77,7 +82,11 @@ export default function HomeScreen() {
           />
         )}
       />
-      <Button mode="outlined" onPress={() => signOut(auth)} style={{ marginTop: 16 }}>
+      <Button
+        mode="outlined"
+        onPress={() => signOut(auth)}
+        style={{ marginTop: 16 }}
+      >
         {t("logout")}
       </Button>
     </View>

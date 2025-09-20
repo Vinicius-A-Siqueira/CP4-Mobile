@@ -12,9 +12,6 @@ import {
 import { db } from "./firebase";
 import { Task } from "../types";
 
-/**
- * Adiciona uma nova tarefa para o usuário
- */
 export const addTask = async (userId: string, title: string) => {
   try {
     const docRef = await addDoc(collection(db, "users", userId, "tasks"), {
@@ -29,9 +26,6 @@ export const addTask = async (userId: string, title: string) => {
   }
 };
 
-/**
- * Deleta uma tarefa específica
- */
 export const deleteTask = async (userId: string, taskId: string) => {
   try {
     const taskRef = doc(db, "users", userId, "tasks", taskId);
@@ -41,9 +35,7 @@ export const deleteTask = async (userId: string, taskId: string) => {
   }
 };
 
-/**
- * Marca/desmarca tarefa como concluída
- */
+
 export const toggleTask = async (
   userId: string,
   taskId: string,
@@ -57,9 +49,7 @@ export const toggleTask = async (
   }
 };
 
-/**
- * Escuta as tarefas do usuário em tempo real
- */
+
 export const getTasks = (
   userId: string,
   callback: (tasks: Task[]) => void

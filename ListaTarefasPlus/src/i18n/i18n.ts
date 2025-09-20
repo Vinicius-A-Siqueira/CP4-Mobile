@@ -12,8 +12,6 @@ i18n.use(initReactI18next).init({
   lng: "pt",
   fallbackLng: "en",
   interpolation: { escapeValue: false },
-  // Remova ou comente a linha abaixo
-  // compatibilityJSON: "v3"
 });
 
 export default i18n;
